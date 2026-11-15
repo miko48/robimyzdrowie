@@ -1,0 +1,27 @@
+name: Verify public Google Form schema
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [main]
+permissions: {}
+jobs:
+  read-public-form:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Read public form metadata only
+        shell: bash
+        run: |
+          python - <<'PY'
+          import urllib.request, json, re
+          url = 'https://forms.gle/XHcyutNJtda6Tyof9'
+          req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+          with urllib.request.urlopen(req, timeout=30) as res:
+              html = res.read(4000000).decode('utf-8')
+              print('FORM_URL:', res.geturl().split('?')[0])
+          m = re.search(r'FB_PUBLIC_LOAD_DATA_\s*=\s*', html)
+          if not m:
+              raise SystemExit('Public form metadata unavailable')
+          data, end = json.JSONDecoder().raw_decode(html[m.end():])
+          print('PUBLIC_FORM_QUESTIONS:', json.dumps(data[1][1], ensure_ascii=False))
+          PY
