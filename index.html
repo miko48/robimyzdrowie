@@ -337,6 +337,37 @@
   .services .list a:hover,.services .list a:focus-visible{color:var(--olive);text-decoration:underline}
   .services .list a:focus-visible{outline:1px solid var(--olive);outline-offset:4px}
   .prices .rows li[id],.coaching[id]{scroll-margin-top:20px}
+  /* O mnie — historia i doświadczenie */
+  .about{position:relative;background:var(--night);color:var(--cream);padding:110px 22px 0;scroll-margin-top:12px}
+  .about .vline{top:0;height:72px;background:var(--hair)}
+  .about .head{padding-top:0}
+  .about .kicker{display:block;margin-bottom:16px;color:var(--olive);font-size:12px;font-weight:400;letter-spacing:.22em;text-transform:uppercase}
+  .about-grid{max-width:980px;margin:64px auto 0;display:grid;grid-template-columns:minmax(0, .86fr) minmax(0, 1.14fr);gap:clamp(32px,5.5vw,76px);align-items:start}
+  .about-picture{min-width:0;margin:0}
+  .about-picture img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:contain}
+  .about-story{min-width:0;font-size:17px;line-height:1.7;color:var(--cream-soft)}
+  .about-story p+p{margin-top:20px}
+  .about-story .about-intro{font-family:var(--display);font-size:clamp(23px,2.6vw,30px);line-height:1.3;color:var(--cream);margin-bottom:22px}
+  .about-story strong{font-weight:500;color:var(--cream)}
+  .about-stats{max-width:640px;margin:46px auto 0;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);text-align:center}
+  .about-stat{padding:23px 12px;min-width:0}
+  .about-stat+.about-stat{border-left:1px solid var(--hair)}
+  .about-stat b{display:block;font-family:var(--display);font-size:clamp(30px,4vw,44px);font-weight:400;color:#dbc2a0;line-height:1.15}
+  .about-stat span{display:block;margin-top:8px;color:var(--cream-soft);font-size:14px;line-height:1.4}
+  .about-qualifications{max-width:640px;margin:24px auto 0;text-align:center;color:var(--olive);font-size:12px;letter-spacing:.12em;text-transform:uppercase;line-height:1.8}
+  .about .cta-wrap{margin-top:30px}
+  .menu-open .menu a:nth-child(4){transition-delay:.49s}
+  @media(max-width:760px){
+    .about{padding-top:96px}
+    .about .vline{height:60px}
+    .about-grid{grid-template-columns:minmax(0,1fr);gap:30px;margin-top:38px;max-width:520px}
+    .about-picture{max-width:400px;margin-inline:auto;width:100%}
+    .about-story{font-size:17px;line-height:1.65}
+    .about-stats{margin-top:36px}
+    .menu .m-cta{margin-top:34px}
+    .menu a:not(.pill){font-size:clamp(34px,9vw,52px)}
+  }
+  @media(max-height:540px) and (max-width:760px){.menu{justify-content:flex-start;padding-top:calc(var(--nav) + 20px);padding-bottom:20px;overflow-y:auto}.menu .m-cta{margin-top:22px}}
 </style>
 </head>
 <body>
@@ -344,6 +375,7 @@
   <a class="logo" href="#top" aria-label="Robimy Zdrowie – strona główna"><span class="logo-mark" aria-hidden="true"></span><b>Robimy Zdrowie</b></a>
   <div class="links">
     <a href="#cennik">Cennik</a>
+    <a href="#o-mnie">O mnie</a>
     <a href="#zapis">Zapisy</a>
     <a class="pill dark" href="#btn">Umów termin</a>
   </div>
@@ -352,7 +384,8 @@
 <div class="menu" id="menu" aria-hidden="true">
   <a href="#top"><span>01</span>Start</a>
   <a href="#cennik"><span>02</span>Cennik</a>
-  <a href="#zapis"><span>03</span>Zapisy</a>
+  <a href="#o-mnie"><span>03</span>O mnie</a>
+  <a href="#zapis"><span>04</span>Zapisy</a>
   <div class="m-cta"><a class="pill dark" href="#btn" style="font-size:16px;opacity:1;transform:none">Umów termin
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
 </div>
@@ -461,6 +494,35 @@
       Umów termin
     </a>
   </div>
+</section>
+
+<section class="about" id="o-mnie" aria-labelledby="about-title">
+  <span class="vline" aria-hidden="true"></span>
+  <div class="head rv">
+    <span class="kicker">Moja historia</span>
+    <h2 id="about-title">O&nbsp;mnie</h2>
+    <p>Zdrowie to sposób życia.</p>
+  </div>
+  <div class="about-grid">
+    <figure class="about-picture rv">
+      <img src="assets/about.webp" width="1000" height="1250" loading="lazy" decoding="async" alt="Trening mobilności na drabinkach. Najlepszy sprzęt treningowy nosisz przy sobie od urodzenia.">
+    </figure>
+    <div class="about-story">
+      <p class="about-intro rv">Sport towarzyszy mi od dziecka. Zdrowie stało się moją pasją, a&nbsp;pomaganie innym – naturalnym kierunkiem rozwoju.</p>
+      <p class="rv">Kiedy w&nbsp;czasie pandemii zamknięto siłownie, postanowiłem, że nie pozwolę, aby okoliczności mnie zatrzymały. Zacząłem trenować street workout i&nbsp;kalistenikę, odkrywając możliwości własnego ciała.</p>
+      <p class="rv">Moja droga nie zawsze była jednak prosta. Kontuzje, złamania i&nbsp;operacje sprawiły, że już jako młody człowiek musiałem nauczyć się rehabilitacji i&nbsp;odbudowywać swoją sprawność. To właśnie wtedy zrozumiałem, jak ważne są cierpliwość, wytrwałość i&nbsp;odpowiednie podejście do zdrowia.</p>
+      <p class="rv">Pływanie pomagało mi odzyskać sprawność. Kilka lat później podczas Otyliady przepłynąłem w&nbsp;ciągu 12 godzin prawie 700 basenów. Miałem nie biegać, a&nbsp;jednak z&nbsp;czasem przebiegłem półmaraton. I&nbsp;nie zamierzam się zatrzymywać.</p>
+      <p class="rv">Wyprawy górskie, rower, sztuki walki, kalistenika, stretching, joga, trening siłowy i&nbsp;fizjoterapia – każda z&nbsp;tych dziedzin czegoś mnie nauczyła. Poznałem też wielu wspaniałych ludzi, którzy zainspirowali mnie do dalszego rozwoju.</p>
+      <p class="rv">Z&nbsp;własnych doświadczeń wyniosłem wiele wiedzy, którą zacząłem wykorzystywać, pomagając innym. Ukończyłem szkołę technika masażysty oraz kursy trenera personalnego. Wciąż rozwijam swoją wiedzę z&nbsp;zakresu fizjoterapii, neurobiologii i&nbsp;rozwoju osobistego.</p>
+      <p class="rv"><strong>Robimy Zdrowie powstało z&nbsp;potrzeby dzielenia się tym doświadczeniem.</strong></p>
+      <p class="rv">Chcę ułatwiać innym drogę do odzyskiwania sprawności, budowania siły i&nbsp;świadomego dbania o&nbsp;siebie. Pomagać w&nbsp;odkrywaniu możliwości własnego ciała i&nbsp;tworzeniu zdrowych nawyków, które zostają z&nbsp;nami na całe życie.</p>
+    </div>
+  </div>
+  <div class="about-stats rv">
+    <div class="about-stat"><b>~700</b><span>basenów w&nbsp;12 godzin<br>podczas Otyliady</span></div>
+    <div class="about-stat"><b>21,1 km</b><span>ukończony<br>półmaraton</span></div>
+  </div>
+  <p class="about-qualifications rv">Technik masażysta · Trener personalny · Pasjonat ruchu i&nbsp;zdrowego stylu życia</p>
 </section>
 
 <section class="book" id="zapis">
