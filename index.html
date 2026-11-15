@@ -299,11 +299,19 @@
   }
   /* Logotyp i ikony kontaktowe */
   .logo{flex:none;flex-direction:row;justify-content:center;align-items:center;gap:9px}
-  .logo-mark{display:block;width:29px;aspect-ratio:184/229;flex:none;background-color:currentColor;
+  .logo-mark{display:block;width:34px;aspect-ratio:768/960;flex:none;background-color:currentColor;
     -webkit-mask:url('assets/logo.svg') center/contain no-repeat;mask:url('assets/logo.svg') center/contain no-repeat;
     transition:background-color .5s}
   .footer-contact a{display:inline-flex;align-items:center;justify-content:center;gap:7px}
   .footer-contact svg{flex:none;width:17px;height:17px}
+  /* Subtelne, cieple oliwkowe akcenty */
+  :root{--olive:#a8ad83;--olive-dark:#626c48}
+  .hero .meta{color:var(--olive-dark)}
+  .col .foot,.lab .n{color:var(--olive)}
+  .footer-contact svg{color:var(--olive)}
+  .opt input:focus-visible + span,.consent input:focus-visible ~ .box{outline-color:var(--olive)}
+  input:focus,textarea:focus{border-bottom-color:var(--olive)}
+  .opt input:checked + span{border-color:var(--olive)}
 </style>
 </head>
 <body>
@@ -451,7 +459,7 @@
 
     <div class="q rv" data-req="phone">
       <div class="lab"><span class="n">05</span>Numer telefonu <span class="r">*</span></div>
-      <div class="field uline"><input type="tel" name="entry.1045781291" autocomplete="tel" inputmode="tel" placeholder="+48 600 000 000"></div>
+      <div class="field uline"><input type="tel" name="entry.1045781291" autocomplete="tel" inputmode="tel" placeholder="+48 777 888 999"></div>
       <div class="err field" style="margin-top:12px">Podaj poprawny numer</div>
     </div>
 
