@@ -191,6 +191,10 @@
   .q{padding:34px 0;border-top:1px solid var(--hair)}
   .q:last-of-type{border-bottom:1px solid var(--hair)}
   .lab{display:flex;gap:18px;align-items:baseline;font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:400;color:var(--cream)}
+  .lab.numbered{display:grid;grid-template-columns:20px minmax(0,1fr) auto;gap:6px 18px}
+  .lab.numbered .n{grid-column:1;grid-row:1}
+  .lab-title{grid-column:2;grid-row:1;min-width:0}
+  .lab.numbered .o,.lab.numbered .r{grid-column:3;grid-row:1}
   .lab .n{font-family:var(--display);color:var(--gold);letter-spacing:.04em;font-size:14px;min-width:20px}
   .lab .o{color:var(--cream-soft);letter-spacing:.14em;font-size:10.5px;margin-left:auto}
   .lab .r{color:var(--gold)}
@@ -265,7 +269,8 @@
     .photo{top:38%}
     .hint,.field{margin-left:0}
     .lab{flex-wrap:wrap;gap:6px 14px}
-    .lab .o{margin-left:0;width:100%;padding-left:34px}
+    .lab.numbered{column-gap:14px}
+    .lab.numbered .o{grid-column:2 / -1;grid-row:2;margin-left:0}
     .head{padding-top:120px}
   }
   @media (prefers-reduced-motion:reduce){
@@ -496,8 +501,8 @@
     <h3>Współpraca i&nbsp;prowadzenie</h3>
     <p class="desc">Indywidualne prowadzenie dla osób, które chcą świadomie zadbać o&nbsp;swoje zdrowie, sprawność i&nbsp;rozwój. Wspólnie pracujemy nad treningiem, mobilnością, nawykami i&nbsp;podejściem do życia. Nie tylko plan treningowy, ale realne wsparcie w&nbsp;procesie stawania się lepszą wersją siebie. Do współpracy podchodzę poważnie i&nbsp;zależy mi na Twoich postępach.</p>
     <ul class="rows">
-      <li><span class="nm">1 miesiąc</span><a class="pr" href="#f" data-book-service="Współpraca" aria-label="Zgłoszenie na współpracę na 1 miesiąc – 600 zł">600 zł</a></li>
-      <li><span class="nm">3 miesiące</span><a class="pr" href="#f" data-book-service="Współpraca" aria-label="Zgłoszenie na współpracę na 3 miesiące – 1200 zł">1200 zł</a><span class="nt coaching-saving">Oszczędzasz 600 zł w&nbsp;porównaniu z&nbsp;3 pojedynczymi miesiącami.</span></li>
+      <li><span class="nm">1 miesiąc</span><a class="pr" href="#f" data-book-service="Współpraca" aria-label="Zgłoszenie na współpracę na 1 miesiąc – 500 zł">500 zł</a></li>
+      <li><span class="nm">3 miesiące · promocja</span><a class="pr" href="#f" data-book-service="Współpraca" aria-label="Zgłoszenie na współpracę na 3 miesiące – 1200 zł">1200 zł</a><span class="nt coaching-saving">400 zł/mies. · oszczędzasz 300 zł (20%).</span></li>
     </ul>
     <div class="coaching-details">
       <h4>W&nbsp;ramach współpracy</h4>
@@ -558,7 +563,7 @@
 
   <form id="f" method="post" action="https://docs.google.com/forms/d/e/1FAIpQLSei_EjhcbkKBx-u7gDgFMyoe5TiwbjMMMDcOan3R1ve0pB7AA/formResponse" novalidate>
     <div class="q rv" data-req="radio">
-      <div class="lab"><span class="n">01</span>Jaka usługa Cię interesuje? <span class="r">*</span></div>
+      <div class="lab numbered"><span class="n">01</span><span class="lab-title">Jaka usługa Cię interesuje?</span><span class="r">*</span></div>
       <div class="field opts big">
         <label class="opt"><input type="radio" name="entry.1946890973" value="🙌🏻 Masaż"><span>Masaż</span></label>
         <label class="opt"><input type="radio" name="entry.1946890973" value="🏋🏼 Trening personalny"><span>Trening personalny</span></label>
@@ -568,7 +573,7 @@
     </div>
 
     <div class="q rv">
-      <div class="lab"><span class="n">02</span>Jaki jest Twój główny cel? <span class="o">Opcjonalnie</span></div>
+      <div class="lab numbered"><span class="n">02</span><span class="lab-title">Jaki jest Twój główny cel?</span><span class="o">Opcjonalnie</span></div>
       <div class="field opts">
         <label class="opt"><input type="radio" name="entry.1326088561" value="Redukcja bólu pleców i napięć"><span>Redukcja bólu pleców i&nbsp;napięć</span></label>
         <label class="opt"><input type="radio" name="entry.1326088561" value="Relaks i regeneracja"><span>Relaks i&nbsp;regeneracja</span></label>
@@ -578,19 +583,19 @@
     </div>
 
     <div class="q rv">
-      <div class="lab"><span class="n">03</span><label for="booking-details">Co powinienem wiedzieć, aby Ci jak najlepiej pomóc?</label> <span class="o">Opcjonalnie</span></div>
-      <p class="hint">Możesz opisać szczegóły i&nbsp;swoje oczekiwania. Nie podawaj informacji o&nbsp;stanie zdrowia.</p>
+      <div class="lab numbered"><span class="n">03</span><label class="lab-title" for="booking-details">Co powinienem wiedzieć, aby Ci jak najlepiej pomóc?</label><span class="o">Opcjonalnie</span></div>
+      <p class="hint">Możesz opisać szczegóły i&nbsp;swoje oczekiwania.</p>
       <div class="field uline"><textarea id="booking-details" name="entry.187063823" placeholder="Napisz kilka słów…"></textarea></div>
     </div>
 
     <div class="q rv" data-req="text">
-      <div class="lab"><span class="n">04</span>Imię i&nbsp;nazwisko <span class="r">*</span></div>
+      <div class="lab numbered"><span class="n">04</span><span class="lab-title">Imię i&nbsp;nazwisko</span><span class="r">*</span></div>
       <div class="field uline"><input type="text" name="entry.2005620554" autocomplete="name" placeholder="Jan Kowalski"></div>
       <div class="err field" style="margin-top:12px">Podaj imię i&nbsp;nazwisko</div>
     </div>
 
     <div class="q rv" data-req="phone">
-      <div class="lab"><span class="n">05</span>Numer telefonu <span class="r">*</span></div>
+      <div class="lab numbered"><span class="n">05</span><span class="lab-title">Numer telefonu</span><span class="r">*</span></div>
       <div class="field uline"><input type="tel" name="entry.1045781291" autocomplete="tel" inputmode="tel" placeholder="+48 000 000 000"></div>
       <div class="err field" style="margin-top:12px">Podaj poprawny numer</div>
     </div>
