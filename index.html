@@ -386,6 +386,12 @@
   .privacy-info a,.footer-legal a{color:var(--olive);text-decoration:underline;text-underline-offset:4px}
   .privacy-info a:hover,.footer-legal a:hover{color:var(--cream)}
   .footer-legal{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 24px;margin:0 auto 22px;letter-spacing:.08em}
+  /* Ceny prowadzą bezpośrednio do formularza */
+  .rows a.pr{color:inherit;text-decoration:underline;text-decoration-color:var(--hair);text-decoration-thickness:1px;text-underline-offset:5px;transition:color .3s,text-decoration-color .3s}
+  .rows a.pr:hover,.rows a.pr:focus-visible{color:var(--olive);text-decoration-color:var(--olive)}
+  .rows a.pr:focus-visible{outline:1px solid var(--olive);outline-offset:5px}
+  .coaching .coaching-saving{color:var(--olive)}
+  #f{scroll-margin-top:20px}
 </style>
 </head>
 <body>
@@ -470,8 +476,8 @@
       <h3>Masaże</h3>
       <p class="desc">Masaż relaksacyjny lub sportowy z&nbsp;dojazdem do klienta. Nie tracisz czasu na wychodzenie z&nbsp;domu, a&nbsp;po masażu od razu możesz odpocząć.</p>
       <ul class="rows">
-        <li id="masaz-relaks-sport"><span class="nm">Masaż relaks / sport</span><span class="pr">150 zł<small>/ 60 min</small></span><span class="nt">Pełna godzina masażu</span></li>
-        <li id="pakiet-dla-zdrowia"><span class="nm">Pakiet dla zdrowia</span><span class="pr">500 zł<small>/ 5 masaży</small></span><span class="nt">100 zł za każdy masaż</span></li>
+        <li id="masaz-relaks-sport"><span class="nm">Masaż relaks / sport</span><a class="pr" href="#f" data-book-service="Masaż" aria-label="Zgłoszenie na masaż relaksacyjny lub sportowy – 150 zł za 60 minut">150 zł<small>/ 60 min</small></a><span class="nt">Pełna godzina masażu</span></li>
+        <li id="pakiet-dla-zdrowia"><span class="nm">Pakiet dla zdrowia</span><a class="pr" href="#f" data-book-service="Masaż" aria-label="Zgłoszenie na pakiet dla zdrowia – 500 zł za 5 masaży">500 zł<small>/ 5 masaży</small></a><span class="nt">100 zł za każdy masaż</span></li>
       </ul>
       <p class="foot">Dojazd do klienta na terenie powiatu brzozowskiego w&nbsp;cenie</p>
     </div>
@@ -479,8 +485,8 @@
       <h3>Treningi</h3>
       <p class="desc">Rozwojowe treningi z&nbsp;użyciem własnego ciała, gum oporowych, kół gimnastycznych i&nbsp;rollera. Większa swoboda ruchu, mobilność, siła, prewencja kontuzji i&nbsp;zdrowa pewność siebie na co dzień.</p>
       <ul class="rows">
-        <li id="trening-indywidualny"><span class="nm">Indywidualny</span><span class="pr">100 zł<small>/ osoba</small></span><span class="nt">Dostosowany do potrzeb i&nbsp;możliwości</span></li>
-        <li id="trening-grupowy"><span class="nm">Grupowy</span><span class="pr">50 zł<small>/ osoba</small></span><span class="nt">Prowadzenie zbiorowych treningów</span></li>
+        <li id="trening-indywidualny"><span class="nm">Indywidualny</span><a class="pr" href="#f" data-book-service="Trening personalny" aria-label="Zgłoszenie na trening indywidualny – 100 zł za osobę">100 zł<small>/ osoba</small></a><span class="nt">Dostosowany do potrzeb i&nbsp;możliwości</span></li>
+        <li id="trening-grupowy"><span class="nm">Grupowy</span><a class="pr" href="#f" data-book-service="Trening personalny" aria-label="Zgłoszenie na trening grupowy – 50 zł za osobę">50 zł<small>/ osoba</small></a><span class="nt">Prowadzenie zbiorowych treningów</span></li>
       </ul>
       <p class="foot">Sesja 1,5 h · rozgrzewka → trening → wyciszenie</p>
     </div>
@@ -488,10 +494,10 @@
 
   <div class="col coaching rv" id="wspolpraca">
     <h3>Współpraca i&nbsp;prowadzenie</h3>
-    <p class="desc">Indywidualne prowadzenie dla osób, które chcą świadomie zadbać o&nbsp;swoje zdrowie, sprawność i&nbsp;rozwój. Wspólnie pracujemy nad treningiem, mobilnością, nawykami i&nbsp;podejściem do życia. Nie tylko plan treningowy, ale realne wsparcie w&nbsp;procesie stawania się lepszą wersją siebie.</p>
+    <p class="desc">Indywidualne prowadzenie dla osób, które chcą świadomie zadbać o&nbsp;swoje zdrowie, sprawność i&nbsp;rozwój. Wspólnie pracujemy nad treningiem, mobilnością, nawykami i&nbsp;podejściem do życia. Nie tylko plan treningowy, ale realne wsparcie w&nbsp;procesie stawania się lepszą wersją siebie. Do współpracy podchodzę poważnie i&nbsp;zależy mi na Twoich postępach.</p>
     <ul class="rows">
-      <li><span class="nm">1 miesiąc</span><span class="pr">600 zł</span></li>
-      <li><span class="nm">3 miesiące</span><span class="pr">1500 zł</span></li>
+      <li><span class="nm">1 miesiąc</span><a class="pr" href="#f" data-book-service="Współpraca" aria-label="Zgłoszenie na współpracę na 1 miesiąc – 600 zł">600 zł</a></li>
+      <li><span class="nm">3 miesiące</span><a class="pr" href="#f" data-book-service="Współpraca" aria-label="Zgłoszenie na współpracę na 3 miesiące – 1200 zł">1200 zł</a><span class="nt coaching-saving">Oszczędzasz 600 zł w&nbsp;porównaniu z&nbsp;3 pojedynczymi miesiącami.</span></li>
     </ul>
     <div class="coaching-details">
       <h4>W&nbsp;ramach współpracy</h4>
@@ -672,10 +678,14 @@
   const f = document.getElementById('f'), btn = document.getElementById('btn'), btnTxt = document.getElementById('btnTxt'),
         done = document.getElementById('done'), sink = document.getElementById('gf_sink'), sendErr = document.getElementById('sendErr');
 
-  // Zapis na współpracę z cennika: wybierz istniejącą opcję formularza.
-  document.getElementById('coaching-cta').addEventListener('click', () => {
-    const option = [...f.querySelectorAll('input[name="entry.1946890973"]')].find(input => input.value.includes('Współpraca'));
+  // Wybór usługi w formularzu po kliknięciu ceny lub przycisku współpracy.
+  function selectBookingService(service){
+    const option = [...f.querySelectorAll('input[name="entry.1946890973"]')].find(input => input.value.includes(service));
     if (option) { option.checked = true; option.dispatchEvent(new Event('change', {bubbles:true})); }
+  }
+  document.getElementById('coaching-cta').addEventListener('click', () => selectBookingService('Współpraca'));
+  document.querySelectorAll('.prices a[data-book-service]').forEach(link => {
+    link.addEventListener('click', () => selectBookingService(link.dataset.bookService));
   });
 
   function check(q){
