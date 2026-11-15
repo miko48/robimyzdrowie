@@ -12,7 +12,7 @@
 <style>
   :root{
     --paper:#ebe6de; --ink:#2a2520; --ink-soft:#5b5249; --line:rgba(42,37,32,.32);
-    --night:#16130f; --cream:#ece4d8; --cream-soft:rgba(236,228,216,.62); --hair:rgba(236,228,216,.22);
+    --night:#16130f; --cream:#f0e8dc; --cream-soft:rgba(240,232,220,.74); --hair:rgba(236,228,216,.22);
     --gold:#b39a7e; --err:#d38a6f;
     --display:"Marcellus", "Cormorant Garamond", Georgia, serif;
     --sans:"Jost", "Helvetica Neue", Arial, sans-serif;
@@ -101,7 +101,7 @@
   .bottom{margin-top:auto;padding-bottom:clamp(36px,7vh,70px)}
   .services{--services-gap:clamp(28px,5vw,64px);display:grid;grid-template-columns:1fr 1fr;column-gap:var(--services-gap)}
   .services .l{text-align:right}
-  .eyebrow{font-family:var(--display);text-transform:uppercase;color:#d2b896;font-size:clamp(15px,1.9vw,21px);line-height:1.15}
+  .eyebrow{font-family:var(--display);text-transform:uppercase;color:#dbc2a0;font-size:clamp(15px,1.9vw,21px);line-height:1.15}
   .list{list-style:none;margin-top:22px;font-size:clamp(10.5px,1.15vw,12.5px);letter-spacing:.22em;text-transform:uppercase;color:var(--cream);font-weight:400;line-height:2.15}
   .hr{height:1px;background:var(--hair);max-width:560px;margin:34px auto 0;transform:scaleX(0);animation:growX 1.6s 1.6s var(--ease) forwards}
   .hr.b{margin-top:30px}
@@ -145,7 +145,7 @@
   .prices .head{padding-top:150px}
   .cols{max-width:980px;margin:80px auto 0;display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(28px,6vw,90px);position:relative}
   .cols::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--hair)}
-  .col h3{font-family:var(--display);font-weight:400;text-transform:uppercase;color:#d2b896;font-size:clamp(24px,2.65vw,30px);letter-spacing:.01em}
+  .col h3{font-family:var(--display);font-weight:400;text-transform:uppercase;color:#dbc2a0;font-size:clamp(24px,2.65vw,30px);letter-spacing:.01em}
   .col .desc{margin-top:16px;color:var(--cream-soft);font-size:14.5px;line-height:1.65;max-width:380px}
   .rows{list-style:none;margin-top:34px}
   .rows li{display:grid;grid-template-columns:1fr auto;gap:4px 18px;align-items:baseline;padding:22px 0;border-top:1px solid var(--hair)}
@@ -204,7 +204,7 @@
   input[type=text],input[type=tel],textarea{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(236,228,216,.25);
     color:var(--cream);font-family:var(--display);font-size:clamp(19px,2.4vw,24px);padding:10px 0 12px;border-radius:0;transition:border-color .4s}
   textarea{font-family:var(--sans);font-size:16px;font-weight:300;line-height:1.55;min-height:96px;resize:vertical}
-  input::placeholder,textarea::placeholder{color:rgba(236,228,216,.28)}
+  input::placeholder,textarea::placeholder{color:rgba(240,232,220,.38)}
   input:focus,textarea:focus{outline:0;border-bottom-color:var(--gold)}
   .uline{position:relative}
   .uline::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--cream);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease)}
@@ -240,7 +240,7 @@
   .done.show > *{animation:fade 1.3s var(--ease) both}
   .done.show > :nth-child(2){animation-delay:.2s}.done.show > :nth-child(3){animation-delay:.35s}.done.show > :nth-child(4){animation-delay:.5s}
 
-  footer{background:var(--night);color:rgba(236,228,216,.4);text-align:center;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;padding:0 22px 44px}
+  footer{background:var(--night);color:rgba(240,232,220,.52);text-align:center;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;padding:0 22px 44px}
 
   /* przewijanie */
   .rv{opacity:0;transform:translateY(30px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease)}
@@ -307,7 +307,7 @@
   .footer-contact a{display:inline-flex;align-items:center;justify-content:center;gap:7px}
   .footer-contact svg{flex:none;width:17px;height:17px}
   /* Subtelne, cieple oliwkowe akcenty */
-  :root{--olive:#a8ad83;--olive-dark:#626c48}
+  :root{--olive:#b1b58c;--olive-dark:#626c48}
   .hero .meta{color:var(--olive-dark)}
   .col .foot,.lab .n{color:var(--olive)}
   .footer-contact svg{color:var(--olive)}
@@ -325,8 +325,8 @@
   .coaching .rows{margin-top:30px}
   .coaching .rows li{grid-template-columns:minmax(0,1fr) auto}
   .coaching-details{margin-top:28px}
-  .coaching-details h4{font-size:12px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--olive);margin-bottom:14px}
-  .coaching-features{list-style:none;display:grid;gap:10px;font-size:16px;line-height:1.5;color:var(--cream-soft)}
+  .coaching-details h4{font-size:15px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--olive);margin-bottom:14px}
+  .coaching-features{list-style:none;display:grid;gap:10px;font-size:18px;line-height:1.5;color:var(--cream-soft)}
   .coaching-features li{display:flex;align-items:baseline;gap:12px}
   .coaching-features li::before{content:"";flex:none;width:5px;height:5px;border-radius:50%;background:var(--olive);transform:translateY(-3px)}
   .coaching-link{display:inline-block;margin-top:26px;color:var(--cream);font-size:13px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--hair);padding-bottom:5px}
@@ -362,10 +362,10 @@
     <div class="split">
       <div class="l">
         <h1 class="title"><span class="row"><span>Masaż</span></span><span class="row"><span>&amp; Trening</span></span></h1>
-        <div class="meta fade d3">Z dojazdem do Ciebie<br>Brzozów i okolice</div>
+        <div class="meta fade d3">Z&nbsp;dojazdem do Ciebie<br>Brzozów i&nbsp;okolice</div>
       </div>
       <div class="copy fade d4">
-        <p>Profesjonalny masaż, który przyjeżdża prosto do Ciebie — po sesji od razu odpoczywasz, bez wychodzenia z domu. Do tego treningi na swobodę ruchu, mobilność i siłę.</p>
+        <p>Profesjonalny masaż, który przyjeżdża prosto do Ciebie — po sesji od razu odpoczywasz, bez wychodzenia z&nbsp;domu. Do tego treningi na swobodę ruchu, mobilność i&nbsp;siłę.</p>
         <p>Wypełnij krótki formularz, a&nbsp;odezwę się w&nbsp;ciągu 24h, żeby potwierdzić termin.</p>
       </div>
     </div>
@@ -385,7 +385,7 @@
             <li>Pakiet dla zdrowia</li>
             <li>Trening indywidualny</li>
             <li>Trening grupowy</li>
-            <li>Współpraca i prowadzenie</li>
+            <li>Współpraca i&nbsp;prowadzenie</li>
           </ul>
         </div>
         <div></div>
@@ -406,24 +406,24 @@
   <span class="vline" aria-hidden="true"></span>
   <div class="head rv">
     <h2>Cennik</h2>
-    <p>Bez względu na to, co robisz w życiu — dobry masaż i mądry trening zawsze się przydadzą.</p>
+    <p>Bez względu na to, co robisz w&nbsp;życiu — dobry masaż i&nbsp;mądry trening zawsze się przydadzą.</p>
   </div>
 
   <div class="cols">
     <div class="col l rv">
       <h3>Masaże</h3>
-      <p class="desc">Masaż relaksacyjny lub sportowy z dojazdem do klienta. Nie tracisz czasu na wychodzenie z domu, a po masażu od razu możesz odpocząć.</p>
+      <p class="desc">Masaż relaksacyjny lub sportowy z&nbsp;dojazdem do klienta. Nie tracisz czasu na wychodzenie z&nbsp;domu, a&nbsp;po masażu od razu możesz odpocząć.</p>
       <ul class="rows">
         <li><span class="nm">Masaż relaks / sport</span><span class="pr">150 zł<small>/ 60 min</small></span><span class="nt">Pełna godzina masażu</span></li>
         <li><span class="nm">Pakiet dla zdrowia</span><span class="pr">500 zł<small>/ 5 masaży</small></span><span class="nt">100 zł za każdy masaż</span></li>
       </ul>
-      <p class="foot">Dojazd do klienta na terenie powiatu brzozowskiego w cenie</p>
+      <p class="foot">Dojazd do klienta na terenie powiatu brzozowskiego w&nbsp;cenie</p>
     </div>
     <div class="col rv">
       <h3>Treningi</h3>
-      <p class="desc">Rozwojowe treningi z użyciem własnego ciała, gum oporowych, kół gimnastycznych i rollera. Większa swoboda ruchu, mobilność, siła, prewencja kontuzji i zdrowa pewność siebie na co dzień.</p>
+      <p class="desc">Rozwojowe treningi z&nbsp;użyciem własnego ciała, gum oporowych, kół gimnastycznych i&nbsp;rollera. Większa swoboda ruchu, mobilność, siła, prewencja kontuzji i&nbsp;zdrowa pewność siebie na co dzień.</p>
       <ul class="rows">
-        <li><span class="nm">Indywidualny</span><span class="pr">100 zł<small>/ osoba</small></span><span class="nt">Dostosowany do potrzeb i możliwości</span></li>
+        <li><span class="nm">Indywidualny</span><span class="pr">100 zł<small>/ osoba</small></span><span class="nt">Dostosowany do potrzeb i&nbsp;możliwości</span></li>
         <li><span class="nm">Grupowy</span><span class="pr">50 zł<small>/ osoba</small></span><span class="nt">Prowadzenie zbiorowych treningów</span></li>
       </ul>
       <p class="foot">Sesja 1,5 h · rozgrzewka → trening → wyciszenie</p>
@@ -431,20 +431,20 @@
   </div>
 
   <div class="col coaching rv">
-    <h3>Współpraca i prowadzenie</h3>
-    <p class="desc">Indywidualne prowadzenie dla osób, które chcą świadomie zadbać o swoje zdrowie, sprawność i rozwój. Wspólnie pracujemy nad treningiem, mobilnością, nawykami i podejściem do życia. Nie tylko plan treningowy, ale realne wsparcie w procesie stawania się lepszą wersją siebie.</p>
+    <h3>Współpraca i&nbsp;prowadzenie</h3>
+    <p class="desc">Indywidualne prowadzenie dla osób, które chcą świadomie zadbać o&nbsp;swoje zdrowie, sprawność i&nbsp;rozwój. Wspólnie pracujemy nad treningiem, mobilnością, nawykami i&nbsp;podejściem do życia. Nie tylko plan treningowy, ale realne wsparcie w&nbsp;procesie stawania się lepszą wersją siebie.</p>
     <ul class="rows">
       <li><span class="nm">1 miesiąc</span><span class="pr">800 zł</span></li>
       <li><span class="nm">3 miesiące</span><span class="pr">1600 zł</span></li>
     </ul>
     <div class="coaching-details">
-      <h4>W ramach współpracy</h4>
+      <h4>W&nbsp;ramach współpracy</h4>
       <ul class="coaching-features">
         <li>Personalizowany plan treningowy</li>
         <li>Weryfikacja postępów</li>
         <li>Protokoły mobilnościowe</li>
         <li>Konsultacje video</li>
-        <li>Praca z mindsetem i nawykami</li>
+        <li>Praca z&nbsp;mindsetem i&nbsp;nawykami</li>
       </ul>
       <a class="coaching-link" href="#zapis" id="coaching-cta">Zacznij współpracę <span aria-hidden="true">→</span></a>
     </div>
@@ -479,23 +479,23 @@
     <div class="q rv">
       <div class="lab"><span class="n">02</span>Jaki jest Twój główny cel? <span class="o">Opcjonalnie</span></div>
       <div class="field opts">
-        <label class="opt"><input type="radio" name="entry.1326088561" value="Redukcja bólu pleców i napięć"><span>Redukcja bólu pleców i napięć</span></label>
-        <label class="opt"><input type="radio" name="entry.1326088561" value="Relaks i regeneracja"><span>Relaks i regeneracja</span></label>
-        <label class="opt"><input type="radio" name="entry.1326088561" value="Poprawa kondycji i siły"><span>Poprawa kondycji i siły</span></label>
+        <label class="opt"><input type="radio" name="entry.1326088561" value="Redukcja bólu pleców i napięć"><span>Redukcja bólu pleców i&nbsp;napięć</span></label>
+        <label class="opt"><input type="radio" name="entry.1326088561" value="Relaks i regeneracja"><span>Relaks i&nbsp;regeneracja</span></label>
+        <label class="opt"><input type="radio" name="entry.1326088561" value="Poprawa kondycji i siły"><span>Poprawa kondycji i&nbsp;siły</span></label>
         <label class="opt"><input type="radio" name="entry.1326088561" value="Poprawa sylwetki"><span>Poprawa sylwetki</span></label>
       </div>
     </div>
 
     <div class="q rv">
       <div class="lab"><span class="n">03</span>Kontuzje, bóle lub przeciwwskazania <span class="o">Opcjonalnie</span></div>
-      <p class="hint">Np. problemy z kręgosłupem, przebyte operacje, choroby.</p>
+      <p class="hint">Np. problemy z&nbsp;kręgosłupem, przebyte operacje, choroby.</p>
       <div class="field uline"><textarea name="entry.1065046570" placeholder="Napisz kilka słów…"></textarea></div>
     </div>
 
     <div class="q rv" data-req="text">
-      <div class="lab"><span class="n">04</span>Imię i nazwisko <span class="r">*</span></div>
+      <div class="lab"><span class="n">04</span>Imię i&nbsp;nazwisko <span class="r">*</span></div>
       <div class="field uline"><input type="text" name="entry.2005620554" autocomplete="name" placeholder="Jan Kowalski"></div>
-      <div class="err field" style="margin-top:12px">Podaj imię i nazwisko</div>
+      <div class="err field" style="margin-top:12px">Podaj imię i&nbsp;nazwisko</div>
     </div>
 
     <div class="q rv" data-req="phone">
@@ -510,7 +510,7 @@
         <label class="consent">
           <input type="checkbox" name="entry.1166974658" value="Wyrażam zgodę na przetwarzanie moich danych osobowych w celu kontaktu i umówienia wizyty.">
           <span class="box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16130f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
-          <span>Wyrażam zgodę na przetwarzanie moich danych osobowych w celu kontaktu i umówienia wizyty.</span>
+          <span>Wyrażam zgodę na przetwarzanie moich danych osobowych w&nbsp;celu kontaktu i&nbsp;umówienia wizyty.</span>
         </label>
         <div class="err">Zgoda jest wymagana</div>
       </div>
@@ -521,15 +521,15 @@
         <span id="btnTxt">Wyślij zgłoszenie</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </button>
-      <p class="send-err" id="sendErr">Nie udało się wysłać. Sprawdź połączenie i spróbuj ponownie.</p>
-      <p class="fine">Odpowiedź w ciągu 24h</p>
+      <p class="send-err" id="sendErr">Nie udało się wysłać. Sprawdź połączenie i&nbsp;spróbuj ponownie.</p>
+      <p class="fine">Odpowiedź w&nbsp;ciągu 24h</p>
     </div>
   </form>
 
   <div class="done" id="done" role="status" aria-live="polite">
     <div class="ring"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ece4d8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
     <h3>Dziękuję</h3>
-    <p>Zgłoszenie dotarło. Odezwę się w ciągu 24h, żeby potwierdzić termin.</p>
+    <p>Zgłoszenie dotarło. Odezwę się w&nbsp;ciągu 24h, żeby potwierdzić termin.</p>
     <button class="again" id="again" type="button">Wyślij kolejne zgłoszenie</button>
   </div>
 </section>
