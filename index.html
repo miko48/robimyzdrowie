@@ -373,6 +373,11 @@
     .about-stat:last-child{grid-column:1/-1;border-left:0;border-top:1px solid var(--hair)}
   }
   @media(max-height:540px) and (max-width:760px){.menu{justify-content:flex-start;padding-top:calc(var(--nav) + 20px);padding-bottom:20px;overflow-y:auto}.menu .m-cta{margin-top:22px}}
+  /* Informacja prawna przy formularzu i w stopce */
+  .privacy-info{line-height:1.65;overflow-wrap:anywhere}
+  .privacy-info a,.footer-legal a{color:var(--olive);text-decoration:underline;text-underline-offset:4px}
+  .privacy-info a:hover,.footer-legal a:hover{color:var(--cream)}
+  .footer-legal{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 24px;margin:0 auto 22px;letter-spacing:.08em}
 </style>
 </head>
 <body>
@@ -551,41 +556,35 @@
     <div class="q rv">
       <div class="lab"><span class="n">02</span>Jaki jest Twój główny cel? <span class="o">Opcjonalnie</span></div>
       <div class="field opts">
-        <label class="opt"><input type="radio" name="entry.1326088561" value="Redukcja bólu pleców i napięć"><span>Redukcja bólu pleców i&nbsp;napięć</span></label>
         <label class="opt"><input type="radio" name="entry.1326088561" value="Relaks i regeneracja"><span>Relaks i&nbsp;regeneracja</span></label>
         <label class="opt"><input type="radio" name="entry.1326088561" value="Poprawa kondycji i siły"><span>Poprawa kondycji i&nbsp;siły</span></label>
         <label class="opt"><input type="radio" name="entry.1326088561" value="Poprawa sylwetki"><span>Poprawa sylwetki</span></label>
       </div>
     </div>
 
-    <div class="q rv">
-      <div class="lab"><span class="n">03</span>Kontuzje, bóle lub przeciwwskazania <span class="o">Opcjonalnie</span></div>
-      <p class="hint">Np. problemy z&nbsp;kręgosłupem, przebyte operacje, choroby.</p>
-      <div class="field uline"><textarea name="entry.1065046570" placeholder="Napisz kilka słów…"></textarea></div>
-    </div>
-
     <div class="q rv" data-req="text">
-      <div class="lab"><span class="n">04</span>Imię i&nbsp;nazwisko <span class="r">*</span></div>
+      <div class="lab"><span class="n">03</span>Imię i&nbsp;nazwisko <span class="r">*</span></div>
       <div class="field uline"><input type="text" name="entry.2005620554" autocomplete="name" placeholder="Jan Kowalski"></div>
       <div class="err field" style="margin-top:12px">Podaj imię i&nbsp;nazwisko</div>
     </div>
 
     <div class="q rv" data-req="phone">
-      <div class="lab"><span class="n">05</span>Numer telefonu <span class="r">*</span></div>
+      <div class="lab"><span class="n">04</span>Numer telefonu <span class="r">*</span></div>
       <div class="field uline"><input type="tel" name="entry.1045781291" autocomplete="tel" inputmode="tel" placeholder="+48 000 000 000"></div>
       <div class="err field" style="margin-top:12px">Podaj poprawny numer</div>
     </div>
 
     <div class="q rv" data-req="check">
-      <div class="lab"><span class="n">06</span>Zgoda na kontakt <span class="r">*</span></div>
+      <div class="lab"><span class="n">05</span>Zgoda na kontakt <span class="r">*</span></div>
       <div class="field">
         <label class="consent">
           <input type="checkbox" name="entry.1166974658" value="Wyrażam zgodę na przetwarzanie moich danych osobowych w celu kontaktu i umówienia wizyty.">
           <span class="box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16130f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
           <span>Wyrażam zgodę na przetwarzanie moich danych osobowych w&nbsp;celu kontaktu i&nbsp;umówienia wizyty.</span>
         </label>
-        <div class="err">Zgoda jest wymagana</div>
+        <div class="err">Zaznacz zgodę lub skontaktuj się ze mną telefonicznie albo mailowo.</div>
       </div>
+      <p class="hint privacy-info">Administratorem danych jest Mikołaj Siadkowski (Robimy Zdrowie). Dane wykorzystuję do obsługi zgłoszenia i&nbsp;ustalenia warunków usługi. Możesz wycofać zgodę w&nbsp;każdej chwili. Nie podawaj danych o&nbsp;stanie zdrowia. Zobacz <a href="prywatnosc.html#prywatnosc">politykę prywatności</a> i&nbsp;<a href="prywatnosc.html#regulamin">regulamin formularza</a>. Wysłanie zgłoszenia nie oznacza rezerwacji ani obowiązku zapłaty. Zamiast formularza możesz napisać na <a href="mailto:kontakt@robimyzdrowie.pl">kontakt@robimyzdrowie.pl</a> lub zadzwonić pod <a href="tel:+48729882962">+48 729 882 962</a>.</p>
     </div>
 
     <div class="send rv">
@@ -612,6 +611,7 @@
     <a href="https://www.facebook.com/RobimyZdrowie" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true" focusable="false"><path d="M14 21v-8h2.7l.4-3.1H14V8c0-.9.3-1.5 1.6-1.5h1.7V3.7a22 22 0 0 0-2.5-.2c-2.5 0-4.3 1.5-4.3 4.4v2H8V13h2.5v8z"/></svg>Facebook</a>
     <a href="tel:+48729882962">+48 729 882 962</a>
   </div>
+  <div class="footer-legal"><a href="prywatnosc.html#prywatnosc">Polityka prywatności</a><a href="prywatnosc.html#regulamin">Regulamin formularza</a><a href="mailto:kontakt@robimyzdrowie.pl">kontakt@robimyzdrowie.pl</a></div>
   <div>© <span id="y"></span> · Robimy Zdrowie · Masaż, trening, regeneracja</div>
 </footer>
 
