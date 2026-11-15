@@ -8,20 +8,20 @@
 <meta name="theme-color" content="#ebe6de">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@700&family=Marcellus&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@700&family=Jost:wght@300;400;500&family=Marcellus&display=swap" rel="stylesheet">
 <style>
   :root{
     --paper:#ebe6de; --ink:#2a2520; --ink-soft:#5b5249; --line:rgba(42,37,32,.32);
     --night:#16130f; --cream:#f0e8dc; --cream-soft:rgba(240,232,220,.74); --hair:rgba(236,228,216,.22);
     --gold:#b39a7e; --err:#d38a6f;
     --display:"Marcellus", "Cormorant Garamond", Georgia, serif;
-    --sans:Arial, "Helvetica Neue", sans-serif;
+    --sans:"Jost", "Helvetica Neue", Arial, sans-serif;
     --ease:cubic-bezier(.2,.8,.2,1);
     --nav:68px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;background:var(--night);scroll-padding-top:var(--nav)}
-  body{font-family:var(--sans);font-weight:400;color:var(--ink);background:var(--night);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body{font-family:var(--sans);font-weight:300;color:var(--ink);background:var(--night);-webkit-font-smoothing:antialiased;overflow-x:hidden}
   ::selection{background:var(--gold);color:var(--night)}
 
 
@@ -202,8 +202,8 @@
   .opts.big .opt span{font-family:var(--display);font-size:clamp(15px,1.8vw,18px);letter-spacing:.02em;padding:14px 26px}
 
   input[type=text],input[type=tel],textarea{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(236,228,216,.25);
-    color:var(--cream);font-family:var(--sans);font-size:clamp(19px,2.4vw,24px);padding:10px 0 12px;border-radius:0;transition:border-color .4s}
-  textarea{font-family:var(--sans);font-size:17px;font-weight:400;line-height:1.55;min-height:96px;resize:vertical}
+    color:var(--cream);font-family:var(--display);font-size:clamp(19px,2.4vw,24px);padding:10px 0 12px;border-radius:0;transition:border-color .4s}
+  textarea{font-family:var(--sans);font-size:17px;font-weight:300;line-height:1.55;min-height:96px;resize:vertical}
   input::placeholder,textarea::placeholder{color:rgba(240,232,220,.38)}
   input:focus,textarea:focus{outline:0;border-bottom-color:var(--gold)}
   .uline{position:relative}
@@ -332,6 +332,11 @@
   .coaching-link{display:inline-block;margin-top:26px;color:var(--cream);font-size:13px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--hair);padding-bottom:5px}
   .coaching-link:hover{border-color:var(--olive);color:var(--olive)}
   @media(max-width:760px){.coaching{margin-top:70px;padding-top:30px}.coaching h3{text-align:left}.coaching .desc{margin:16px 0 0;text-align:left}}
+  /* Odnośniki z listy usług do konkretnych pozycji cennika */
+  .services .list a{color:inherit;text-decoration:none;transition:color .3s;cursor:pointer;text-underline-offset:4px}
+  .services .list a:hover,.services .list a:focus-visible{color:var(--olive);text-decoration:underline}
+  .services .list a:focus-visible{outline:1px solid var(--olive);outline-offset:4px}
+  .prices .rows li[id],.coaching[id]{scroll-margin-top:20px}
 </style>
 </head>
 <body>
@@ -381,11 +386,11 @@
         <div class="l fade d5">
           <div class="eyebrow">Dostępne<br>usługi</div>
           <ul class="list">
-            <li>Masaż relaks / sport</li>
-            <li>Pakiet dla zdrowia</li>
-            <li>Trening indywidualny</li>
-            <li>Trening grupowy</li>
-            <li>Współpraca i&nbsp;prowadzenie</li>
+            <li><a href="#masaz-relaks-sport">Masaż relaks / sport</a></li>
+            <li><a href="#pakiet-dla-zdrowia">Pakiet dla zdrowia</a></li>
+            <li><a href="#trening-indywidualny">Trening indywidualny</a></li>
+            <li><a href="#trening-grupowy">Trening grupowy</a></li>
+            <li><a href="#wspolpraca">Współpraca i&nbsp;prowadzenie</a></li>
           </ul>
         </div>
         <div></div>
@@ -414,8 +419,8 @@
       <h3>Masaże</h3>
       <p class="desc">Masaż relaksacyjny lub sportowy z&nbsp;dojazdem do klienta. Nie tracisz czasu na wychodzenie z&nbsp;domu, a&nbsp;po masażu od razu możesz odpocząć.</p>
       <ul class="rows">
-        <li><span class="nm">Masaż relaks / sport</span><span class="pr">150 zł<small>/ 60 min</small></span><span class="nt">Pełna godzina masażu</span></li>
-        <li><span class="nm">Pakiet dla zdrowia</span><span class="pr">500 zł<small>/ 5 masaży</small></span><span class="nt">100 zł za każdy masaż</span></li>
+        <li id="masaz-relaks-sport"><span class="nm">Masaż relaks / sport</span><span class="pr">150 zł<small>/ 60 min</small></span><span class="nt">Pełna godzina masażu</span></li>
+        <li id="pakiet-dla-zdrowia"><span class="nm">Pakiet dla zdrowia</span><span class="pr">500 zł<small>/ 5 masaży</small></span><span class="nt">100 zł za każdy masaż</span></li>
       </ul>
       <p class="foot">Dojazd do klienta na terenie powiatu brzozowskiego w&nbsp;cenie</p>
     </div>
@@ -423,14 +428,14 @@
       <h3>Treningi</h3>
       <p class="desc">Rozwojowe treningi z&nbsp;użyciem własnego ciała, gum oporowych, kół gimnastycznych i&nbsp;rollera. Większa swoboda ruchu, mobilność, siła, prewencja kontuzji i&nbsp;zdrowa pewność siebie na co dzień.</p>
       <ul class="rows">
-        <li><span class="nm">Indywidualny</span><span class="pr">100 zł<small>/ osoba</small></span><span class="nt">Dostosowany do potrzeb i&nbsp;możliwości</span></li>
-        <li><span class="nm">Grupowy</span><span class="pr">50 zł<small>/ osoba</small></span><span class="nt">Prowadzenie zbiorowych treningów</span></li>
+        <li id="trening-indywidualny"><span class="nm">Indywidualny</span><span class="pr">100 zł<small>/ osoba</small></span><span class="nt">Dostosowany do potrzeb i&nbsp;możliwości</span></li>
+        <li id="trening-grupowy"><span class="nm">Grupowy</span><span class="pr">50 zł<small>/ osoba</small></span><span class="nt">Prowadzenie zbiorowych treningów</span></li>
       </ul>
       <p class="foot">Sesja 1,5 h · rozgrzewka → trening → wyciszenie</p>
     </div>
   </div>
 
-  <div class="col coaching rv">
+  <div class="col coaching rv" id="wspolpraca">
     <h3>Współpraca i&nbsp;prowadzenie</h3>
     <p class="desc">Indywidualne prowadzenie dla osób, które chcą świadomie zadbać o&nbsp;swoje zdrowie, sprawność i&nbsp;rozwój. Wspólnie pracujemy nad treningiem, mobilnością, nawykami i&nbsp;podejściem do życia. Nie tylko plan treningowy, ale realne wsparcie w&nbsp;procesie stawania się lepszą wersją siebie.</p>
     <ul class="rows">
