@@ -97,7 +97,7 @@
   @keyframes up{to{transform:none}}
 
   .bottom{margin-top:auto;padding-bottom:clamp(36px,7vh,70px)}
-  .services{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(28px,5vw,64px)}
+  .services{--services-gap:clamp(28px,5vw,64px);display:grid;grid-template-columns:1fr 1fr;column-gap:var(--services-gap)}
   .services .l{text-align:right}
   .eyebrow{font-family:var(--display);text-transform:uppercase;color:#d2b896;font-size:clamp(15px,1.9vw,21px);line-height:1.15}
   .list{list-style:none;margin-top:22px;font-size:clamp(10.5px,1.15vw,12.5px);letter-spacing:.22em;text-transform:uppercase;color:var(--cream);font-weight:400;line-height:2.15}
@@ -117,7 +117,9 @@
   /* czytelność listy usług na zdjęciu */
   .services .l{position:relative}
   .services .l::before{content:"";position:absolute;z-index:-1;right:-40px;top:-50px;bottom:-40px;width:min(520px,140%);
-    background:radial-gradient(ellipse at 75% 50%,rgba(16,13,10,.62) 0%,rgba(16,13,10,.35) 45%,transparent 72%);pointer-events:none}
+    background:radial-gradient(ellipse at 75% 50%,rgba(16,13,10,.62) 0%,rgba(16,13,10,.35) 45%,transparent 72%);pointer-events:none;
+    -webkit-mask-image:linear-gradient(to right,#000 calc(100% - 40px),transparent calc(100% - 40px + var(--services-gap) / 2));
+    mask-image:linear-gradient(to right,#000 calc(100% - 40px),transparent calc(100% - 40px + var(--services-gap) / 2));}
   .services .eyebrow,.services .list{text-shadow:0 1px 2px rgba(0,0,0,.55),0 2px 18px rgba(0,0,0,.6)}
 
   /* CTA nad zgięciem */
@@ -245,7 +247,7 @@
   @media (max-width:640px){
     .photo img{object-position:66% 50%}
     .split{margin-top:9vh;column-gap:22px}
-    .services{column-gap:22px}
+    .services{--services-gap:22px}
     .title{font-size:7.6vw}
     .copy{font-size:13.5px}
     .list{letter-spacing:.14em;font-size:10px}
