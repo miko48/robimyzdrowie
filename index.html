@@ -8,20 +8,20 @@
 <meta name="theme-color" content="#ebe6de">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@700&family=Jost:wght@300;400;500&family=Marcellus&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@700&family=Marcellus&display=swap" rel="stylesheet">
 <style>
   :root{
     --paper:#ebe6de; --ink:#2a2520; --ink-soft:#5b5249; --line:rgba(42,37,32,.32);
     --night:#16130f; --cream:#f0e8dc; --cream-soft:rgba(240,232,220,.74); --hair:rgba(236,228,216,.22);
     --gold:#b39a7e; --err:#d38a6f;
     --display:"Marcellus", "Cormorant Garamond", Georgia, serif;
-    --sans:"Jost", "Helvetica Neue", Arial, sans-serif;
+    --sans:Arial, "Helvetica Neue", sans-serif;
     --ease:cubic-bezier(.2,.8,.2,1);
     --nav:68px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;background:var(--night);scroll-padding-top:var(--nav)}
-  body{font-family:var(--sans);font-weight:300;color:var(--ink);background:var(--night);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body{font-family:var(--sans);font-weight:400;color:var(--ink);background:var(--night);-webkit-font-smoothing:antialiased;overflow-x:hidden}
   ::selection{background:var(--gold);color:var(--night)}
 
 
@@ -202,8 +202,8 @@
   .opts.big .opt span{font-family:var(--display);font-size:clamp(15px,1.8vw,18px);letter-spacing:.02em;padding:14px 26px}
 
   input[type=text],input[type=tel],textarea{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(236,228,216,.25);
-    color:var(--cream);font-family:var(--display);font-size:clamp(19px,2.4vw,24px);padding:10px 0 12px;border-radius:0;transition:border-color .4s}
-  textarea{font-family:var(--sans);font-size:16px;font-weight:300;line-height:1.55;min-height:96px;resize:vertical}
+    color:var(--cream);font-family:var(--sans);font-size:clamp(19px,2.4vw,24px);padding:10px 0 12px;border-radius:0;transition:border-color .4s}
+  textarea{font-family:var(--sans);font-size:17px;font-weight:400;line-height:1.55;min-height:96px;resize:vertical}
   input::placeholder,textarea::placeholder{color:rgba(240,232,220,.38)}
   input:focus,textarea:focus{outline:0;border-bottom-color:var(--gold)}
   .uline{position:relative}
@@ -270,29 +270,29 @@
   .links a{font-size:12px}
   .links .pill.dark{font-size:15px}
   .meta{font-size:clamp(12px,1.4vw,15px)}
-  .copy{font-size:clamp(15px,1.65vw,20px)}
+  .copy{font-size:clamp(16px,1.65vw,20px)}
   .eyebrow{font-size:clamp(16px,2vw,22px)}
   .list{font-size:clamp(11.5px,1.25vw,13.5px)}
-  .col .desc{font-size:16px}
+  .col .desc{font-size:17px}
   .rows .nm{font-size:15px;letter-spacing:.16em;line-height:1.35;min-width:0}
   .rows .pr small{font-size:12px}
-  .rows .nt{font-size:15px}
+  .rows .nt{font-size:16px}
   .col .foot{font-size:12px}
-  .head p{font-size:17px}
+  .head p{font-size:18px}
   .lab{font-size:13px}
   .lab .o{font-size:11.5px}
-  .hint{font-size:15.5px}
+  .hint{font-size:17px}
   .opt span{font-size:13px}
-  .consent{font-size:16px}
+  .consent{font-size:17px}
   .fine{font-size:12px}
   .err{font-size:12px}
-  .done p{font-size:17px}
+  .done p{font-size:18px}
   footer{font-size:11.5px}
   .footer-contact{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px 28px;margin:0 auto 22px}
   .footer-contact a{font-size:13px;letter-spacing:.12em;color:var(--cream-soft);text-decoration:none;transition:color .3s;white-space:nowrap;line-height:1.6}
   .footer-contact a:hover,.footer-contact a:focus-visible{color:var(--cream);text-decoration:underline;text-underline-offset:4px}
   @media(max-width:640px){
-    .copy{font-size:15px}
+    .copy{font-size:16px}
     .list{font-size:11px}
     .rows .nm{font-size:14.5px;letter-spacing:.14em}
     .rows .pr small{font-size:11.5px}
@@ -326,7 +326,7 @@
   .coaching .rows li{grid-template-columns:minmax(0,1fr) auto}
   .coaching-details{margin-top:28px}
   .coaching-details h4{font-size:15px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--olive);margin-bottom:14px}
-  .coaching-features{list-style:none;display:grid;gap:10px;font-size:18px;line-height:1.5;color:var(--cream-soft)}
+  .coaching-features{list-style:none;display:grid;gap:10px;font-size:19px;line-height:1.5;color:var(--cream-soft)}
   .coaching-features li{display:flex;align-items:baseline;gap:12px}
   .coaching-features li::before{content:"";flex:none;width:5px;height:5px;border-radius:50%;background:var(--olive);transform:translateY(-3px)}
   .coaching-link{display:inline-block;margin-top:26px;color:var(--cream);font-size:13px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--hair);padding-bottom:5px}
@@ -434,7 +434,7 @@
     <h3>Współpraca i&nbsp;prowadzenie</h3>
     <p class="desc">Indywidualne prowadzenie dla osób, które chcą świadomie zadbać o&nbsp;swoje zdrowie, sprawność i&nbsp;rozwój. Wspólnie pracujemy nad treningiem, mobilnością, nawykami i&nbsp;podejściem do życia. Nie tylko plan treningowy, ale realne wsparcie w&nbsp;procesie stawania się lepszą wersją siebie.</p>
     <ul class="rows">
-      <li><span class="nm">1 miesiąc</span><span class="pr">800 zł</span></li>
+      <li><span class="nm">1 miesiąc</span><span class="pr">600 zł</span></li>
       <li><span class="nm">3 miesiące</span><span class="pr">1500 zł</span></li>
     </ul>
     <div class="coaching-details">
