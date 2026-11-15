@@ -556,7 +556,7 @@
     <p>Kilka pytań, żebym mógł przygotować się do spotkania. Zajmie Ci to około minuty.</p>
   </div>
 
-  <form id="f" novalidate>
+  <form id="f" method="post" action="https://docs.google.com/forms/d/e/1FAIpQLSei_EjhcbkKBx-u7gDgFMyoe5TiwbjMMMDcOan3R1ve0pB7AA/formResponse" novalidate>
     <div class="q rv" data-req="radio">
       <div class="lab"><span class="n">01</span>Jaka usługa Cię interesuje? <span class="r">*</span></div>
       <div class="field opts big">
@@ -576,14 +576,20 @@
       </div>
     </div>
 
+    <div class="q rv">
+      <div class="lab"><span class="n">03</span><label for="booking-details">Co powinienem wiedzieć, aby Ci jak najlepiej pomóc?</label> <span class="o">Opcjonalnie</span></div>
+      <p class="hint">Możesz opisać szczegóły i&nbsp;swoje oczekiwania. Nie podawaj informacji o&nbsp;stanie zdrowia.</p>
+      <div class="field uline"><textarea id="booking-details" name="entry.187063823" placeholder="Napisz kilka słów…"></textarea></div>
+    </div>
+
     <div class="q rv" data-req="text">
-      <div class="lab"><span class="n">03</span>Imię i&nbsp;nazwisko <span class="r">*</span></div>
+      <div class="lab"><span class="n">04</span>Imię i&nbsp;nazwisko <span class="r">*</span></div>
       <div class="field uline"><input type="text" name="entry.2005620554" autocomplete="name" placeholder="Jan Kowalski"></div>
       <div class="err field" style="margin-top:12px">Podaj imię i&nbsp;nazwisko</div>
     </div>
 
     <div class="q rv" data-req="phone">
-      <div class="lab"><span class="n">04</span>Numer telefonu <span class="r">*</span></div>
+      <div class="lab"><span class="n">05</span>Numer telefonu <span class="r">*</span></div>
       <div class="field uline"><input type="tel" name="entry.1045781291" autocomplete="tel" inputmode="tel" placeholder="+48 000 000 000"></div>
       <div class="err field" style="margin-top:12px">Podaj poprawny numer</div>
     </div>
@@ -606,17 +612,10 @@
         <span id="btnTxt">Wyślij zgłoszenie</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </button>
-      <p class="send-err" id="sendErr">Nie udało się wysłać. Sprawdź połączenie i&nbsp;spróbuj ponownie.</p>
       <p class="fine">Odpowiedź w&nbsp;ciągu 24h</p>
     </div>
   </form>
 
-  <div class="done" id="done" role="status" aria-live="polite">
-    <div class="ring"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ece4d8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
-    <h3>Dziękuję</h3>
-    <p>Zgłoszenie dotarło. Odezwę się w&nbsp;ciągu 24h, żeby potwierdzić termin.</p>
-    <button class="again" id="again" type="button">Wyślij kolejne zgłoszenie</button>
-  </div>
 </section>
 
 <footer>
@@ -629,11 +628,9 @@
   <div>© <span id="y"></span> · Robimy Zdrowie · Masaż, trening, regeneracja</div>
 </footer>
 
-<iframe name="gf_sink" id="gf_sink" title="" style="display:none" aria-hidden="true"></iframe>
 
 <script>
   // Odpowiedzi trafiają do oryginalnego Formularza Google (zakładka „Odpowiedzi").
-  const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSei_EjhcbkKBx-u7gDgFMyoe5TiwbjMMMDcOan3R1ve0pB7AA/formResponse";
   document.getElementById('y').textContent = new Date().getFullYear();
   // Staż treningowy liczony od roku rozpoczęcia treningów.
   const trainingYears = Math.max(0, new Date().getFullYear() - 2013);
@@ -675,8 +672,7 @@
   }
 
   // formularz
-  const f = document.getElementById('f'), btn = document.getElementById('btn'), btnTxt = document.getElementById('btnTxt'),
-        done = document.getElementById('done'), sink = document.getElementById('gf_sink'), sendErr = document.getElementById('sendErr');
+  const f = document.getElementById('f'), btn = document.getElementById('btn'), btnTxt = document.getElementById('btnTxt');
 
   // Wybór usługi w formularzu po kliknięciu ceny lub przycisku współpracy.
   function selectBookingService(service){
@@ -693,34 +689,28 @@
     if (t === 'radio') ok = !!q.querySelector('input:checked');
     if (t === 'check') ok = q.querySelector('input').checked;
     if (t === 'text')  ok = q.querySelector('input').value.trim().length >= 2;
-    if (t === 'phone') ok = q.querySelector('input').value.replace(/\D/g,'').length >= 9;
+    if (t === 'phone') ok = /^(\+48[\s-]?)?(\d{3}[\s-]?){2}\d{3}$/.test(q.querySelector('input').value.trim());
     q.classList.toggle('invalid', !ok); return ok;
   }
   f.querySelectorAll('[data-req]').forEach(q => q.addEventListener('input', () => { if (q.classList.contains('invalid')) check(q); }));
   f.querySelectorAll('[data-req]').forEach(q => q.addEventListener('change', () => { if (q.classList.contains('invalid')) check(q); }));
 
-  let pending = false, timer;
+  // Google displays the actual confirmation or validation error.
   f.addEventListener('submit', e => {
-    e.preventDefault(); sendErr.style.display = 'none';
     const bad = [...f.querySelectorAll('[data-req]')].filter(q => !check(q));
-    if (bad.length){ bad[0].scrollIntoView({behavior:'smooth', block:'center'}); return; }
-    const out = document.createElement('form');
-    out.method = 'POST'; out.action = FORM_URL; out.target = 'gf_sink'; out.style.display = 'none';
-    new FormData(f).forEach((v,k) => { const i = document.createElement('input'); i.type = 'hidden'; i.name = k; i.value = v; out.appendChild(i); });
-    document.body.appendChild(out);
-    pending = true; btn.disabled = true; btnTxt.textContent = 'Wysyłanie…';
-    timer = setTimeout(() => { if (pending) fail(); }, 15000);
-    out.submit(); out.remove();
+    if (bad.length){
+      e.preventDefault();
+      bad[0].scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+    const phone = f.querySelector('input[name="entry.1045781291"]');
+    phone.value = phone.value.trim();
+    btn.disabled = true;
+    btnTxt.textContent = 'Wysyłanie…';
   });
-  sink.addEventListener('load', () => {
-    if (!pending) return; pending = false; clearTimeout(timer);
-    f.style.display = 'none'; done.classList.add('show');
-    document.getElementById('zapis').scrollIntoView({behavior:'smooth'});
-  });
-  function fail(){ pending = false; btn.disabled = false; btnTxt.textContent = 'Wyślij zgłoszenie'; sendErr.style.display = 'block'; }
-  document.getElementById('again').addEventListener('click', () => {
-    f.reset(); btn.disabled = false; btnTxt.textContent = 'Wyślij zgłoszenie';
-    done.classList.remove('show'); f.style.display = 'block';
+  addEventListener('pageshow', () => {
+    btn.disabled = false;
+    btnTxt.textContent = 'Wyślij zgłoszenie';
   });
 </script>
 </body>
