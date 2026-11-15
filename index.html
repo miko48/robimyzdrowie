@@ -296,18 +296,17 @@
     .footer-contact a{font-size:12.5px}
   }
   /* Logotyp i ikony kontaktowe */
-  .logo{flex:none;justify-content:center;align-items:center}
-  .logo-mark{display:block;width:132px;aspect-ratio:535/225;background-color:currentColor;
+  .logo{flex:none;flex-direction:row;justify-content:center;align-items:center;gap:9px}
+  .logo-mark{display:block;width:29px;aspect-ratio:184/229;flex:none;background-color:currentColor;
     -webkit-mask:url('assets/logo.svg') center/contain no-repeat;mask:url('assets/logo.svg') center/contain no-repeat;
     transition:background-color .5s}
   .footer-contact a{display:inline-flex;align-items:center;justify-content:center;gap:7px}
   .footer-contact svg{flex:none;width:17px;height:17px}
-  @media(max-width:760px){.logo-mark{width:116px}}
 </style>
 </head>
 <body>
 <nav class="nav" id="nav">
-  <a class="logo" href="#top" aria-label="Robimy Zdrowie – strona główna"><span class="logo-mark" aria-hidden="true"></span></a>
+  <a class="logo" href="#top" aria-label="Robimy Zdrowie – strona główna"><span class="logo-mark" aria-hidden="true"></span><b>Robimy Zdrowie</b></a>
   <div class="links">
     <a href="#cennik">Cennik</a>
     <a href="#zapis">Zapis</a>
