@@ -887,6 +887,40 @@
   f.querySelectorAll('[data-req]').forEach(q => q.addEventListener('input', () => { if (q.classList.contains('invalid')) check(q); }));
   f.querySelectorAll('[data-req]').forEach(q => q.addEventListener('change', () => { if (q.classList.contains('invalid')) check(q); }));
 
+  // Płynne przejścia: wybrana usługa → imię i nazwisko → numer telefonu.
+  const nameInput = f.querySelector('input[name="entry.2005620554"]');
+  const phoneInput = f.querySelector('input[name="entry.1045781291"]');
+  const goToField = input => {
+    if (!input) return;
+    input.closest('.q').scrollIntoView({behavior:reduce ? 'instant' : 'smooth', block:'center'});
+  };
+  f.querySelectorAll('input[name="entry.1946890973"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+      if (radio.checked) goToField(nameInput);
+    });
+  });
+
+  let nameAdvanceTimer;
+  const nameComplete = () => nameInput.value.trim().split(/\\s+/).filter(Boolean).length >= 2;
+  const advanceToPhone = () => {
+    clearTimeout(nameAdvanceTimer);
+    if (nameComplete()) goToField(phoneInput);
+  };
+  nameInput.addEventListener('input', () => {
+    clearTimeout(nameAdvanceTimer);
+    if (nameComplete()) nameAdvanceTimer = setTimeout(() => {
+      if (document.activeElement === nameInput) advanceToPhone();
+    }, 1600);
+  });
+  nameInput.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !e.isComposing && nameComplete()) {
+      e.preventDefault();
+      advanceToPhone();
+      phoneInput.focus({preventScroll:true});
+    }
+  });
+  nameInput.addEventListener('blur', advanceToPhone);
+
   // Google displays the actual confirmation or validation error.
   f.addEventListener('submit', e => {
     const bad = [...f.querySelectorAll('[data-req]')].filter(q => !check(q));
