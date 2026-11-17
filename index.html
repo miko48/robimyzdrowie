@@ -799,7 +799,7 @@
       <p class="hint privacy-info"><a href="prywatnosc.html#prywatnosc">Polityka prywatności</a></p>
     </div>
 
-    <div class="send rv">
+    <div class="send">
       <button class="pill" type="submit" id="btn">
         <span id="btnTxt">Wyślij zgłoszenie</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -888,6 +888,14 @@
   f.querySelectorAll('[data-req]').forEach(q => q.addEventListener('change', () => { if (q.classList.contains('invalid')) check(q); }));
 
   // Płynne przejścia: wybrana usługa → imię i nazwisko → numer telefonu.
+  const consentCheckbox = f.querySelector('input[name="entry.1166974658"]');
+  consentCheckbox.addEventListener('change', () => {
+    if (consentCheckbox.checked) {
+      // Przewiń do stale widocznego przycisku; nie wysyłaj formularza automatycznie.
+      btn.scrollIntoView({behavior:reduce ? 'instant' : 'smooth', block:'center'});
+    }
+  });
+
   const nameInput = f.querySelector('input[name="entry.2005620554"]');
   const phoneInput = f.querySelector('input[name="entry.1045781291"]');
   const goToField = input => {
